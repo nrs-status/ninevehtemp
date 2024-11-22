@@ -15,6 +15,7 @@
     ];
   fromMypkgs = with myPkgs; [ 
     kitties.kitty
+    kitties.kittylight
     montezuma_circles_scroll ];
   in
   fromNixpkgs ++ fromMypkgs
