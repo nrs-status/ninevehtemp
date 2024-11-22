@@ -15,7 +15,6 @@
     ];
   fromMypkgs = with myPkgs; [ 
     kitty
-    kittyc
     montezuma_circles_scroll ];
   in
   fromNixpkgs ++ fromMypkgs
