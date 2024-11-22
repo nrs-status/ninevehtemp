@@ -14,7 +14,7 @@
   inotify-tools
     ];
   fromMypkgs = with myPkgs; [ 
-    kitty
+    kitties.kitty
     montezuma_circles_scroll ];
   in
   fromNixpkgs ++ fromMypkgs
