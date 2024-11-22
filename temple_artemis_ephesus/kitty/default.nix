@@ -1,2 +1,2 @@
 { pkgs, ... }:
-pkgs.writeScriptBin "kitty" "${pkgs.lib.getExe pkgs.kitty} -c ${./kitty.conf}"
+pkgs.writeScriptBin "kittyb" "${pkgs.lib.getExe pkgs.kitty} -c ${./kitty.conf}"
