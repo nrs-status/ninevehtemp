@@ -4,5 +4,5 @@ let
 in
 {
   kitty = mkKitty { scriptName = "kittyb"; baseConfPath = ./kitty.conf; themeFileName = "gruvbox_dark.conf"; };
-  kittylight = mkKitty { scripName = "kittyc"; baseConfPath = ./kitty.conf; themeFileName = "gruvbox_light.conf"; };
+  kittylight = mkKitty { scriptName = "kittyc"; baseConfPath = ./kitty.conf; themeFileName = "gruvbox_light.conf"; };
 }
