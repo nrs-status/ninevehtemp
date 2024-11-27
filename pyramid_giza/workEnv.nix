@@ -10,6 +10,9 @@
 
   elan
 
+  pkg-config #for lean http; move to lean-specific env eventually
+  libuv #same
+
   strace
   inotify-tools
     ];
