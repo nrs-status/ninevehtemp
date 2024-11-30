@@ -1,0 +1,5 @@
+{
+      extension = {
+        pl = "prolog";
+      };
+}
