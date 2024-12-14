@@ -26,8 +26,9 @@
       });
     in
     {
-      devShells = forEachSupportedSystem ({ pkgs, system, myPkgs, helpers}: {
-        default = import ./pyramid_giza/workEnvShell.nix { inherit pkgs; inherit myPkgs; inherit system; };
+      devShells = forEachSupportedSystem ({ pkgs, system, myPkgs, helpers}@inputs: {
+        default = import ./pyramid_giza/workEnvShell.nix inputs;
+        agdaEnv = import ./pyramid_giza/agdaEnv.nix inputs;
       });
     };
 }

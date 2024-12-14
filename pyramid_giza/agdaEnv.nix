@@ -8,15 +8,13 @@ let
     jq
     fzf
 
-    elan
-
     strace
     inotify-tools
   ];
   fromMyPkgs = with myPkgs; [
     kitties.kitty
     kitties.kittylight
-    montezuma_circles_scroll
+    montezuma_circles_scroll_upcoming.leanEnv
   ];
 in
 pkgs.mkShell {
