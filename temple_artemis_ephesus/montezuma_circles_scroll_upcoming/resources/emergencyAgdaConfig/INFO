@@ -1,0 +1,2 @@
+lean4 not working properly with nested types and indexed functors so quickly making a working config in order to get agda running.Ultimately the idea is to modularize the entire nixvim config
+when you have more time delte this folder and work on the 'workEnvAttrs' function in the default.nix file at the root of this dir

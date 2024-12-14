@@ -16,13 +16,13 @@ let
   fromMyPkgs = with myPkgs; [
     kitties.kitty
     kitties.kittylight
-    montezuma_circles_scroll
+    montezuma_circles_scroll_upcoming.leanEnv
   ];
 in
 pkgs.mkShell {
     packages = generalPackages ++ fromMyPkgs;
 
-    SUDO_EDITOR = pkgs.lib.getExe myPkgs.montezuma_circles_scroll;
+    SUDO_EDITOR = pkgs.lib.getExe myPkgs.montezuma_circles_scroll_upcoming.leanEnv;
 
     shellHook = ''
     export name=mainenvshell

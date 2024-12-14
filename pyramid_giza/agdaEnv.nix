@@ -14,7 +14,7 @@ let
   fromMyPkgs = with myPkgs; [
     kitties.kitty
     kitties.kittylight
-    montezuma_circles_scroll_upcoming.leanEnv
+    montezuma_circles_scroll_upcoming.agdaEnv
   ];
 in
 pkgs.mkShell {
