@@ -8,13 +8,14 @@
     extraConfigLua = builtins.readFile ./resources/extraConfigLua/leanLspStartAutoCmd.lua;
     packagesApartFromNixvim = with pkgs; [ elan ];
   };
-  agdaEnvAttrs = {
-    plugins = ./resources/emergencyAgdaConfig/pluginsCore.nix { inherit pkgs; };
-    filetype = {};
-    extraPlugins = import ./resources/emergencyAgdaConfig/agda.nix { inherit pkgs; };
-    extraConfigLua = "";
-    packagesApartFromNixvim = with pkgs; [ agda ];
-  };
+  # disabled while using emergency agda config
+  # agdaEnvAttrs = {
+  #   plugins = import ./resources/emergencyAgdaConfig/pluginsCore.nix { inherit pkgs; };
+  #   filetype = {};
+  #   extraPlugins = import ./resources/emergencyAgdaConfig/agda.nix { inherit pkgs; };
+  #   extraConfigLua = "";
+  #   packagesApartFromNixvim = with pkgs; [ agda luajitPackages.luautf8 ];
+  # };
   workEnvAttrs = pkgs.lib.attrsets.updateManyAttrsByPath
   [
     {
@@ -33,6 +34,5 @@
 in
 {
   leanEnv = (mkNixvim leanEnvAttrs).result;
-  agdaEnv = (mkNixvim agdaEnvAttrs).result;
-  workEnv = "";
+  agdaEnv = import ./tempAgdaConfig.nix { inherit pkgs; inherit nixvimFlakeInput; inherit system };
 }
