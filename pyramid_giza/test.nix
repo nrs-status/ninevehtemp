@@ -18,6 +18,6 @@
   fromMypkgs = with myPkgs; [ 
     kitties.kitty
     kitties.kittylight
-    montezuma_circles_scroll_upcoming.onlyLean ];
+    montezuma_circles_scroll_upcoming.leanEnv ];
   in
   fromNixpkgs ++ fromMypkgs

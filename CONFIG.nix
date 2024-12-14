@@ -1,4 +1,4 @@
 inputs:
 {
-  packageSetToLoad = import ./pyramid_giza/test.nix inputs;
+  packageSetToLoad = import ./pyramid_giza/workEnv.nix inputs;
 }

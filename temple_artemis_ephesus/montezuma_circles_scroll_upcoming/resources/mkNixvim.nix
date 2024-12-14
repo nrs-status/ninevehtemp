@@ -29,6 +29,6 @@ in
 argDebug = argToNixvimMaker;
 result = (pkgs.symlinkJoin { 
   name = "nixvimPack"; 
-  paths = packagesApartFromNixvim ++ [ (nixvimFlakeInput.legacyPackages.${system}.makeNixvimWithModule argToNixvimMaker) ];
+  paths = packagesApartFromNixvim ++ [ pkgs.alejandra (nixvimFlakeInput.legacyPackages.${system}.makeNixvimWithModule argToNixvimMaker) ];
 });
 }

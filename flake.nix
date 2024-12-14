@@ -18,35 +18,16 @@
     let
       # supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
       supportedSystems = [ "x86_64-linux" ];
-      forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f {
+      forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f rec {
         pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
         inherit system;
+        helpers = import ./lighthouse_alexandria { lib = pkgs.lib; };
+        myPkgs = helpers.makeMyPkgs { dirpath = ./temple_artemis_ephesus; inherit pkgs; inherit nixvimFlakeInput; inherit system; inherit helpers; };
       });
     in
     {
-      devShells = forEachSupportedSystem ({ pkgs, system}: {
-        default = 
-          let 
-            helpers = import ./lighthouse_alexandria { lib = pkgs.lib; };
-            myPkgs = helpers.makeMyPkgs { dirpath = ./temple_artemis_ephesus; inherit pkgs; inherit nixvimFlakeInput; inherit system; inherit helpers; };
-            config = import ./CONFIG.nix { inherit pkgs; inherit myPkgs; };
-          in 
-            pkgs.mkShell {
-          packages = config.packageSetToLoad;
-
-          SUDO_EDITOR = pkgs.lib.getExe myPkgs.montezuma_circles_scroll;
-
-	  shellHook = ''
-export name=mainenvshell
-
-if [ $(date -d "2024/12/15" +%s) -lt $(date +%s) ]; then
-  while true; do echo "WARNING CLEAR PIECE OF SHELLHOOK CONTAINING THIS CODE OR EXTEND DATE"; sleep 2; done
-else 
-  echo "loading lean systools build; temporary solution until i have time to package it in a form more suited for long term usage"
-  export PATH=$PATH:/home/seba/app/newFramework/systools/.lake/build/bin
-fi
-'';
-        };
+      devShells = forEachSupportedSystem ({ pkgs, system, myPkgs, helpers}: {
+        default = import ./pyramid_giza/workEnvShell.nix { inherit pkgs; inherit myPkgs; inherit system; };
       });
     };
 }
