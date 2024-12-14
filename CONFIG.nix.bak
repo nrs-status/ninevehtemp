@@ -1,0 +1,6 @@
+#deprecated; now using devshells attribute set within flake to customize different devsets
+
+inputs:
+{
+  packageSetToLoad = import ./pyramid_giza/workEnv.nix inputs;
+}

@@ -14,9 +14,9 @@ in
   nixvimFlakeInput.legacyPackages.${system}.makeNixvimWithModule {
     inherit pkgs;
     module = coreModule // {
-      keymaps = import ./core/keymaps.nix;
-      extraPlugins = coreExtraPlugins ++ extraPlugins;
-      plugins = plugins // (corePlugins // { lsp = corePlugins.lsp // {keymaps = import ./core/keymapsInPluginsLsp.nix; }; });
+      keymaps = import ./resources/core/keymaps.nix;
+      extraPlugins = coreExtraPlugins;
+      plugins = (corePlugins // { lsp = corePlugins.lsp // {keymaps = import ./resources/core/keymapsInPluginsLsp.nix; }; });
       extraConfigLua = extraConfigLuaCore;
     };
   }

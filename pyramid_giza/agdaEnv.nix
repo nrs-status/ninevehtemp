@@ -8,6 +8,8 @@ let
     jq
     fzf
 
+    agda
+
     strace
     inotify-tools
   ];

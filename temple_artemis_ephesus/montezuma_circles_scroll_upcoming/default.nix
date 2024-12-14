@@ -34,5 +34,5 @@
 in
 {
   leanEnv = (mkNixvim leanEnvAttrs).result;
-  agdaEnv = import ./tempAgdaConfig.nix { inherit pkgs; inherit nixvimFlakeInput; inherit system };
+  agdaEnv = import ./tempAgdaConfig.nix { inherit pkgs; inherit nixvimFlakeInput; inherit system; };
 }

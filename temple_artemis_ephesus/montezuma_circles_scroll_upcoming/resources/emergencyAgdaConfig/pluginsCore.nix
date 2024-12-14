@@ -158,6 +158,7 @@
       bashls.enable = true;
       agda_ls = {
         enable = true;
+        package = pkgs.haskellPackages.agda-language-server;
       };
     };
   };
