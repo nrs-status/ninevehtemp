@@ -9,6 +9,7 @@
     (builtins.readFile ./resources/extraConfigLua/tabKeyFunc.lua)
     (builtins.readFile ./resources/extraConfigLua/tabKeyFunc.lua)
     (builtins.readFile ./resources/extraConfigLua/setupNvimSurround.lua)
+    (builtins.readFile ./resources/extraConfigLua/agdaLspStartAutoCmd.lua)
   ];
 in
   nixvimFlakeInput.legacyPackages.${system}.makeNixvimWithModule {
