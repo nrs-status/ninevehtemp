@@ -159,12 +159,9 @@
       coq_lsp = {
         enable = true;
         package = pkgs.coqPackages.coq-lsp;
+        cmd = ["coq-lsp"];
       };
     };
-  };
-
-  coq-nvim = {
-    enable = true;
   };
 
   cmp = {
