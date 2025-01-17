@@ -35,4 +35,5 @@ in
 {
   leanEnv = (mkNixvim leanEnvAttrs).result;
   agdaEnv = agdaLspPackage: import ./tempAgdaConfig.nix { inherit pkgs; inherit nixvimFlakeInput; inherit system; inherit agdaLspPackage; };
+  coqEnv = import ./tempAgdaConfig.nix { inherit pkgs; inherit nixvimFlakeInput; inherit system; };
 }
