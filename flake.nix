@@ -32,6 +32,7 @@
     {
       devShells = forEachSupportedSystem ({ pkgs, pkgs2, system, myPkgs, myPkgs2, helpers}: {
         default = import ./pyramid_giza/workEnv.nix { inherit pkgs; inherit system; inherit myPkgs; inherit helpers; };
+        coqEnv = import ./pyramid_giza/coqEnv.nix { inherit pkgs; inherit system; inherit myPkgs; inherit helpers; };
         agdaEnv = import ./pyramid_giza/agdaEnv.nix { pkgs = pkgs2 ; inherit system; myPkgs = myPkgs2; inherit helpers; };
       });
     };

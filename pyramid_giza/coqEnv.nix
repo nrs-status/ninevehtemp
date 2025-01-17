@@ -18,7 +18,7 @@ pkgs.mkShell {
     SUDO_EDITOR = pkgs.lib.getExe myPkgs.montezuma_circles_scroll_upcoming.coqEnv;
 
     shellHook = ''
-    export name=mainenvshell
+    export name=coqenv
 
     echo "loading lean systools build; temporary solution until I have time to package it properly"
 
