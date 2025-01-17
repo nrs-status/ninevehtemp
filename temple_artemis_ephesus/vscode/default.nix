@@ -4,7 +4,7 @@ let
 in
   pkgs.vscode-with-extensions.override {
     vscodeExtensions = [
-      exts.bananacorn.agda-mode
+      exts.banacorn.agda-mode
       exts.leanprover.lean4
       exts.maximedenes.vscoq
     ];
