@@ -1,8 +1,8 @@
-{ pkgs, nixvimFlakeInput, system, ...}:
+{ pkgs, nixvimFlakeInput, system, agdaLspPackage, ...}:
   let 
   coreModule = import ./resources/core/module.nix { inherit pkgs; };
   coreExtraPlugins = import ./resources/core/extraPlugins.nix { inherit pkgs; };
-  corePlugins = import ./resources/emergencyAgdaConfig/pluginsCore.nix { inherit pkgs; };
+  corePlugins = import ./resources/emergencyAgdaConfig/pluginsCore.nix { inherit pkgs; inherit agdaLspPackage; };
   keymaps = import ./resources/core/keymaps.nix;
   extraConfigLuaCore = pkgs.lib.concatStrings [
     (builtins.readFile ./resources/extraConfigLua/rememberFolds.lua)

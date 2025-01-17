@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, agdaLspPackage }:
 {
   #find-next-character motion
   hop = {
@@ -158,7 +158,7 @@
       bashls.enable = true;
       agda_ls = {
         enable = true;
-        package = pkgs.haskellPackages.agda-language-server;
+        package = agdaLspPackage;
       };
     };
   };

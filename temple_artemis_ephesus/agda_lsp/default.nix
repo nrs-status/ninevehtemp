@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, ... }:
 pkgs.stdenv.mkDerivation {
   name = "agda_lsp";
   version = "0.2.7.0.1.4";
