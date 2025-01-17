@@ -1,6 +1,7 @@
 { pkgs, system, myPkgs, helpers }:
 let
   generalPackages = with pkgs; [
+    nix-index #allows finding what packages provide dependencies for auto-patchelf
     git
     ripgrep
     bat
