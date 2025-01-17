@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, ...}:
 
 let
   inherit (pkgs.stdenv) isDarwin isLinux isi686 isx86_64 isAarch32 isAarch64;
