@@ -13,6 +13,7 @@ pkgs.stdenv.mkDerivation {
     autoPatchelfHook
   ];
 
+  #to determine which packages to put here, I repeatedly 
   buildInputs = with pkgs; [
     zlib
     icu70
