@@ -1,4 +1,4 @@
-{ pkgs, agdaLspPackage }:
+{ pkgs }:
 {
   #find-next-character motion
   hop = {
