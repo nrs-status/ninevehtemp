@@ -156,7 +156,10 @@
         settings.telemetry.enable = false;
       };
       bashls.enable = true;
-      coq_lsp.enable = true;
+      coq_lsp = {
+        enable = true;
+        package = pkgs.coqPackages.coq-lsp;
+      };
     };
   };
 
