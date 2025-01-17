@@ -22,7 +22,7 @@ in
 pkgs.mkShell {
     packages = generalPackages ++ fromMyPkgs;
 
-    SUDO_EDITOR = pkgs.lib.getExe (myPkgs.montezuma_circles_scroll_upcoming.agdaEnv myPkgs.agda_lsp);
+    SUDO_EDITOR = pkgs.lib.getExe (myPkgs.montezuma_circles_scroll_upcoming.agdaEnv myPkgs.agda_lsp2);
 
     shellHook = ''
     export name=mainenvshell

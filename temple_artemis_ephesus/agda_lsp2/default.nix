@@ -13,7 +13,7 @@ pkgs.stdenv.mkDerivation {
     autoPatchelfHook
   ];
 
-  #to determine which packages to put here, I repeatedly 
+  #to determine which packages to put here, I repeatedly attempted to build and checked for the packages that were reported missing by autoPatchelfHook. I used nix-index --top-level missingDependency to find them
   buildInputs = with pkgs; [
     zlib
     icu70
