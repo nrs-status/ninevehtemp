@@ -3,7 +3,7 @@
     enable = true;
   };
 
-  nvim-colorizer = {
+  colorizer = {
     enable = true;
     userDefaultOptions = {
       css = true;
