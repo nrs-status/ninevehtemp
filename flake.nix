@@ -39,7 +39,7 @@
       apps = forEachSupportedSystem ({ pkgs, pkgs2, system, myPkgs, myPkgs2, helpers}: {
         vscode = {
           type = "app";
-          program = myPkgs2.vscode;
+          program = "${myPkgs2.vscode}";
         };
       }); 
     };
